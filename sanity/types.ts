@@ -172,12 +172,15 @@ export type AllSanitySchemaTypes = Startup | Author | Markdown | SanityImagePale
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: sanity/lib/queries.ts
 // Variable: STARTUPS_QUERY
-// Query: *[_type == "startup" && defined(slug.current)] | order(_createdAt desc){    _id,    title,    slug,    _createdAt,    author -> {      _id, name, image, bio    },     views,    description,    category,    image}
+// Query: *[  _type == "startup" &&  defined(slug.current) &&  (!defined($search) || title match $search || category match $search || author->name match $search)] | order(_createdAt desc){  _id,  _type,  _createdAt,  _updatedAt,  _rev,  title,  slug,  author->{    _id,    name,    image,    bio  },  views,  description,  category,  image,  pitch}
 export type STARTUPS_QUERYResult = Array<{
   _id: string;
+  _type: "startup";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
   title: string | null;
   slug: Slug | null;
-  _createdAt: string;
   author: {
     _id: string;
     name: string | null;
@@ -188,12 +191,13 @@ export type STARTUPS_QUERYResult = Array<{
   description: string | null;
   category: string | null;
   image: string | null;
+  pitch: string | null;
 }>;
 
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "*[_type == \"startup\" && defined(slug.current)] | order(_createdAt desc){\n    _id,\n    title,\n    slug,\n    _createdAt,\n    author -> {\n      _id, name, image, bio\n    }, \n    views,\n    description,\n    category,\n    image\n}": STARTUPS_QUERYResult;
+    "*[\n  _type == \"startup\" &&\n  defined(slug.current) &&\n  (!defined($search) || title match $search || category match $search || author->name match $search)\n] | order(_createdAt desc){\n  _id,\n  _type,\n  _createdAt,\n  _updatedAt,\n  _rev,\n  title,\n  slug,\n  author->{\n    _id,\n    name,\n    image,\n    bio\n  },\n  views,\n  description,\n  category,\n  image,\n  pitch\n}": STARTUPS_QUERYResult;
   }
 }
