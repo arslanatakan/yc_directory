@@ -12,3 +12,10 @@ export function formatDate(date: string) {
     year: "numeric"
   });
 }
+
+// TODO: Make a formatNumber function 
+// to decide whether we need to write 
+// View or View-s 
+// when a user number is singular or plural. 
+
+// export function formatNumber()
