@@ -13,6 +13,10 @@ export function formatDate(date: string) {
   });
 }
 
+export function parseServerActionResponse<T>(response: T){
+  return JSON.parse(JSON.stringify(response));
+}
+
 // TODO: Make a formatNumber function 
 // to decide whether we need to write 
 // View or View-s 
