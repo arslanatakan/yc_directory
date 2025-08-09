@@ -14,7 +14,8 @@
   },
   "packageManager": "npm@10.9.2",
   "overrides": {
-    "next": "$next"
+    "next": "$next",
+    "napi-postinstall": "0.3.2"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.10",
