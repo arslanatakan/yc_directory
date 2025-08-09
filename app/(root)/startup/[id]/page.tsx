@@ -12,7 +12,7 @@ import StartupCard, { StartupTypeCard } from '@/components/StartupCard';
 
 const md = markdownit();
 
-export const experimental_ppr = true;
+export const experimental_ppr = false;
 
 const page = async ({ params }: { params: { id: string } }) => {
   const id = params.id;
