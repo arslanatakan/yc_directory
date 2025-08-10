@@ -12,11 +12,6 @@ const nextConfig: NextConfig = {
     ]
   },
 
-  devIndicators: {
-    appIsrStatus: true,
-    position: "bottom-right",
-  }
-
 };
 
 export default withSentryConfig(nextConfig, {
