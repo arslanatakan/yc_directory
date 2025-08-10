@@ -13,10 +13,7 @@
     "typegen": "sanity schema extract --path=./sanity/extract.json && sanity typegen generate"
   },
   "packageManager": "npm@10.9.2",
-  "overrides": {
-    "next": "$next",
-    "napi-postinstall": "0.3.2"
-  },
+  "engines": { "node": "20.x" },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.10",
     "@radix-ui/react-slot": "^1.2.3",
@@ -31,7 +28,7 @@
     "clsx": "^2.1.1",
     "lucide-react": "^0.525.0",
     "markdown-it": "^14.1.0",
-    "next": "^15.4.2-canary.35",
+    "next": "15.4.6",
     "next-auth": "^5.0.0-beta.29",
     "next-sanity": "^9.12.3",
     "postcss": "^8.5.6",
@@ -53,7 +50,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.4.1",
+    "eslint-config-next": "15.4.6",
     "typescript": "^5.8.3"
   }
 }
